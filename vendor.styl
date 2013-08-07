@@ -61,10 +61,18 @@ box-sizing()
 
 box-flex()
   vendorNoMS('box-flex', arguments)
-  -ms-flex arguments
+  if arguments > 0
+    -ms-flex arguments 0 auto
+  else
+    -ms-flex 0 arguments auto
 
 box-orient()
   vendorNoMS('box-orient', arguments)
+  if arguments is horizontal
+    -ms-flex-direction row
+  else if arguments is vertical
+    -ms-flex-direction column
+
  
 box-direction()
   vendorNoMS('box-direction', arguments)
