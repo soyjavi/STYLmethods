@@ -1,14 +1,23 @@
 vendor(prop, args)
-  -webkit-{prop} args
-  -moz-{prop} args
-  -ms-{prop} args
-  -o-{prop} args
+  for vendor in webkit moz ms o
+    -{vendor}-{prop} args
   {prop} args
 
 vendorValue(prop, args)
   {prop} -webkit- + args
   {prop} -moz- + args
   {prop} -ms- + args
+  {prop} -o- + args
+  {prop} args
+
+vendorNoMS(prop, args)
+  for vendor in webkit moz o
+    -{vendor}-{prop} args
+  {prop} args 
+
+vendorValueNoMS(prop, args)
+  {prop} -webkit- + args
+  {prop} -moz- + args
   {prop} -o- + args
   {prop} args
 
@@ -35,35 +44,50 @@ backface-visibility()
 
 /* ====================== FLEXBOX ====================== */
 display-box()
-  vendorValue('display', box)
+  vendorValueNoMS('display', box)
+  display -ms-flexbox
 
 box-pack()
-  vendor('box-pack', arguments)
+  vendorNoMS('box-pack', arguments)
+  -ms-flex-pack arguments
 
 box-align()
   vendor('box-align', arguments)
+  -ms-flex-align arguments
 
 box-sizing()
-  vendor('box-sizing', arguments)
+  -moz-box-sizing arguments
+  box-sizing arguments
 
 box-flex()
-  vendor('box-flex', arguments)
+  vendorNoMS('box-flex', arguments)
+  if arguments > 0
+    -ms-flex arguments 0 auto
+  else
+    -ms-flex 0 arguments auto
 
 box-orient()
-  vendor('box-orient', arguments)
+  vendorNoMS('box-orient', arguments)
+  if arguments is horizontal
+    -ms-flex-direction row
+  else if arguments is vertical
+    -ms-flex-direction column
 
+ 
 box-direction()
-  vendor('box-direction', arguments)
+  vendorNoMS('box-direction', arguments)
+  -ms-flex-direction arguments
 
 ordinal-group()
-  vendor('box-ordinal-group', arguments)
+  vendorNoMS('box-ordinal-group', arguments)
+  -ms-flex-order arguments
 
 box-lines()
   vendor('box-lines', arguments)
 
 /* ====================== BOXFLEX ====================== */
 display-flex()
-  vendorValue('display', flex)
+  vendorValueNoMS('display', flex)
 
 flex-flow()
   vendor('flex-flow', arguments)
