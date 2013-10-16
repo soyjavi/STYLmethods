@@ -1,4 +1,4 @@
-# CSSmethods 0.0.1
+# CSSmethods 0.0.2
 ### Repository of methods for CSS preprocessors
 
 ## Credits
