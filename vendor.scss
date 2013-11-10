@@ -27,7 +27,7 @@
   #{$prop}: $args;
 }
 
-@mixin animation {
+@mixin animation ($arguments) {
   @include vendor("animation", $arguments);
 }
 
@@ -35,15 +35,15 @@
   @include vendor("animation-fill-mode", $arguments);
 }
 
-@mixin border-radius {
+@mixin border-radius ($arguments) {
   @include vendor("border-radius", $arguments);
 }
 
-@mixin box-shadow {
+@mixin box-shadow ($arguments) {
   @include vendor("box-shadow", $arguments);
 }
 
-@mixin background-size {
+@mixin background-size ($arguments) {
   @include vendor("background-size", $arguments);
 }
 
@@ -195,7 +195,7 @@
 }
 
 /* ====================== TRANSITIONS ====================== */
-@mixin transition($arguments) {
+@mixin transition($arguments...) {
   @include vendor("transition", $arguments);
 }
 
