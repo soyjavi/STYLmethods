@@ -21,11 +21,6 @@ vendorValueNoMS(prop, args)
   {prop} -o- + args
   {prop} args
 
-animation()
-  vendor('animation', arguments)
-
-animation-fill-mode()
-  vendor('animation-fill-mode', arguments)
 
 border-radius()
   vendor('border-radius', arguments)
@@ -41,6 +36,37 @@ text-shadow()
 
 backface-visibility()
   vendor('backface-visibility', arguments)
+
+/* ==================== ANIMATION =================== */
+animation()
+  vendor('animation', arguments)
+
+animation-name()
+  vendor('animation-name', arguments)
+
+animation-duration()
+  vendor('animation-duration', arguments)
+
+animation-timing-function()
+  vendor('animation-timing', arguments)
+
+animation-delay()
+  vendor('animation-delay', arguments)
+
+animation-iteration-count()
+  vendor('animation-iteration', arguments)
+
+animation-direction()
+  vendor('animation-direction', arguments)
+
+animation-fill-mode()
+  vendor('animation-fill', arguments)
+
+animation-play-state()
+  vendor('animation-play', arguments)
+
+animation-fill-mode()
+  vendor('animation-fill-mode', arguments)
 
 /* ====================== FLEXBOX ====================== */
 display-box()
