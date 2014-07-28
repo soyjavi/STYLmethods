@@ -1,12 +1,9 @@
 {
-  "name": "CSSmethods",
-  "description": "Repository of methods for CSS preprocessors",
-  "version": "0.0.2",
-  "homepage": "http://twitter.com/soyjavi",
-  "author": {
-    "name": "Javi Jimenez Villar - @soyjavi",
-    "site": "http://twitter.com/soyjavi"},
-  "main": [],
-  "keywords": [ "mobile", "framework", "html5", "device", "desktop", "phone", "tablet", "tv" ],
-  "license": [ {"type": "MIT"} ]
+  "name"        : "STYLMethods",
+  "version"     : "0.07.28",
+  "description" : "Repository of methods for STYLUS preprocessor.",
+  "license"     : "MIT",
+  "homepage"    : "http://twitter.com/soyjavi",
+  "author"      : "Javi Jimenez Villar - @soyjavi",
+  "keywords"    : [ "mobile", "framework", "html5", "device", "desktop", "phone", "tablet", "tv" ]
 }
