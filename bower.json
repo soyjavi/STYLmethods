@@ -1,0 +1,15 @@
+{
+  "name": "STYLmethods",
+  "version": "1.0.0",
+  "description": "Repository of methods for STYLUS preprocessor.",
+  "main": "vendor.styl",
+  "homepage": "https://github.com/soyjavi/STYLmethods",
+  "license": "MIT",
+  "authors": [
+    "Javi Jimenez", "Javi Jimenez <javi@tapquo.com>"],
+  "keywords": [ "stylus"],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/soyjavi/STYLmethods.git"
+  }
+}
