@@ -7,6 +7,7 @@
   "license": "MIT",
   "authors": [
     "Javi Jimenez", "Javi Jimenez <javi@tapquo.com>"],
+  "ignore": [],
   "repository": {
     "type": "git",
     "url": "git://github.com/soyjavi/stylmethods.git"
