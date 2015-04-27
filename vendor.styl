@@ -70,6 +70,9 @@ animation-fill-mode()
 
 /* ====================== FLEXBOX ====================== */
 display-flex()
+  display: -webkit-box
+  display: -moz-box
+  display: -ms-flexbox
   display: -webkit-flex
   display: flex
 
@@ -84,6 +87,9 @@ flex-grow()
 
 flex-flow()
   vendor('flex-flow', arguments)
+
+flex-wrap()
+  vendor('flex-wrap', arguments)
 
 flex-shrink()
   vendor('flex-shrink', arguments)

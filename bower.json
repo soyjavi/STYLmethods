@@ -1,14 +1,8 @@
 {
-  "name": "stylmethods",
-  "version": "1.0.1",
-  "description": "Stylus methods",
-  "main": "vendor.styl",
-  "homepage": "https://github.com/soyjavi/stylmethods",
-  "license": "MIT",
-  "authors": [
-    "Javi Jimenez", "Javi Jimenez <javi@tapquo.com>"],
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/soyjavi/stylmethods.git"
-  }
+  "name"              : "stylmethods",
+  "version"           : "1.0.2",
+  "description"       : "Stylus methods",
+  "main"              : "vendor.styl",
+  "ignore"            : [],
+  "license"           : "MIT"
 }
