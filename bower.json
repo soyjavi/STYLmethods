@@ -1,7 +1,7 @@
 {
   "name"              : "stylmethods",
   "version"           : "1.0.2",
-  "description"       : "Stylus methods",
+  "description"       : "Stylus advanced methods",
   "main"              : "vendor.styl",
   "ignore"            : [],
   "license"           : "MIT"
