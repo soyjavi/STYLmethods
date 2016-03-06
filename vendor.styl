@@ -19,57 +19,40 @@ vendorValueNoMS(prop, args)
   {prop} -moz- + args
   {prop} args
 
-border-radius()
-  vendor('border-radius', arguments)
-
-box-shadow()
-  vendor('box-shadow', arguments)
-
-box-sizing()
-  vendorNoMS('box-sizing', arguments)
-
-background-size()
-  vendor('background-size', arguments)
-
-text-shadow()
-  vendor('text-shadow', arguments)
-
-backface-visibility()
-  vendor('backface-visibility', arguments)
-
-perspective()
-  vendor('perspective', arguments)
+vendorWK(prop, args)
+  -webkit-{prop} args
+  {prop} args
 
 /* ==================== ANIMATION =================== */
 animation()
-  vendor('animation', arguments)
+  vendorWK('animation', arguments)
 
 animation-name()
-  vendor('animation-name', arguments)
+  vendorWK('animation-name', arguments)
 
 animation-duration()
-  vendor('animation-duration', arguments)
+  vendorWK('animation-duration', arguments)
 
 animation-timing-function()
-  vendor('animation-timing-function', arguments)
+  vendorWK('animation-timing-function', arguments)
 
 animation-delay()
-  vendor('animation-delay', arguments)
+  vendorWK('animation-delay', arguments)
 
 animation-iteration-count()
-  vendor('animation-iteration-count', arguments)
+  vendorWK('animation-iteration-count', arguments)
 
 animation-direction()
-  vendor('animation-direction', arguments)
+  vendorWK('animation-direction', arguments)
 
 animation-fill-mode()
-  vendor('animation-fill-mode', arguments)
+  vendorWK('animation-fill-mode', arguments)
 
 animation-play-state()
-  vendor('animation-play-state', arguments)
+  vendorWK('animation-play-state', arguments)
 
 animation-fill-mode()
-  vendor('animation-fill-mode', arguments)
+  vendorWK('animation-fill-mode', arguments)
 
 /* ====================== FLEXBOX ====================== */
 display()
@@ -196,13 +179,19 @@ transition-timing-function()
   vendorNoMS('transition-timing-function', arguments)
 
 transform()
-  vendor('transform', arguments)
+  vendorNoMS('transform', arguments)
 
 transform-origin()
-  vendor('transform-origin', arguments)
+  vendorNoMS('transform-origin', arguments)
 
 transform-style()
-  vendor('transform-style', arguments)
+  vendorNoMS('transform-style', arguments)
+
+backface-visibility()
+  vendorNoMS('backface-visibility', arguments)
+
+perspective()
+  vendorNoMS('perspective', arguments)
 
 /* ====================== COLUMNS ====================== */
 columns()
