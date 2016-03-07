@@ -19,120 +19,179 @@ vendorValueNoMS(prop, args)
   {prop} -moz- + args
   {prop} args
 
-border-radius()
-  vendor('border-radius', arguments)
-
-box-shadow()
-  vendor('box-shadow', arguments)
-
-background-size()
-  vendor('background-size', arguments)
-
-text-shadow()
-  vendor('text-shadow', arguments)
-
-backface-visibility()
-  vendor('backface-visibility', arguments)
-
-perspective()
-  vendor('perspective', arguments)
+vendorWK(prop, args)
+  -webkit-{prop} args
+  {prop} args
 
 /* ==================== ANIMATION =================== */
 animation()
-  vendor('animation', arguments)
+  vendorWK('animation', arguments)
 
 animation-name()
-  vendor('animation-name', arguments)
+  vendorWK('animation-name', arguments)
 
 animation-duration()
-  vendor('animation-duration', arguments)
+  vendorWK('animation-duration', arguments)
 
 animation-timing-function()
-  vendor('animation-timing-function', arguments)
+  vendorWK('animation-timing-function', arguments)
 
 animation-delay()
-  vendor('animation-delay', arguments)
+  vendorWK('animation-delay', arguments)
 
 animation-iteration-count()
-  vendor('animation-iteration-count', arguments)
+  vendorWK('animation-iteration-count', arguments)
 
 animation-direction()
-  vendor('animation-direction', arguments)
+  vendorWK('animation-direction', arguments)
 
 animation-fill-mode()
-  vendor('animation-fill-mode', arguments)
+  vendorWK('animation-fill-mode', arguments)
 
 animation-play-state()
-  vendor('animation-play-state', arguments)
+  vendorWK('animation-play-state', arguments)
 
 animation-fill-mode()
-  vendor('animation-fill-mode', arguments)
+  vendorWK('animation-fill-mode', arguments)
 
 /* ====================== FLEXBOX ====================== */
-display-flex()
-  display: -webkit-box
-  display: -moz-box
-  display: -ms-flexbox
-  display: -webkit-flex
-  display: flex
+display()
+  if arguments is flex
+    display -webkit-box
+    display -webkit-flex
+    display -moz-box
+    display -ms-flexbox
+  if arguments is inline-flex
+    display -webkit-inline-box
+    display -webkit-inline-flex
+    display -moz-inline-flex
+    display -ms-inline-flexfox
+  display arguments
 
 flex()
+  bf = arguments
+  if typeof(bf) == 'list'
+    bf = nth(bf, 1)
+  -webkit-box-flex bf
+  -moz-box-flex bf
   vendor('flex', arguments)
 
 flex-direction()
+  if arguments is row-reverse or arguments is column-reverse
+    -webkit-box-direction reverse
+  else
+    -webkit-box-direction normal
+  if arguments is column-reverse or arguments is column
+    -webkit-box-orient vertical
+  else
+    -webkit-box-orient horizontal
   vendor('flex-direction', arguments)
 
-flex-grow()
-  vendor('flex-grow', arguments)
+flex-wrap()
+  if arguments is nowrap
+    -ms-flex-wrap none
+  else
+    -ms-flex-wrap arguments
+  vendorNoMS('flex-wrap', arguments)
 
 flex-flow()
   vendor('flex-flow', arguments)
 
-flex-wrap()
-  vendor('flex-wrap', arguments)
+flex-grow()
+  -webkit-box-flex arguments
+  -ms-flex-positive arguments
+  vendorNoMS('flex-grow', arguments)
 
 flex-shrink()
-  vendor('flex-shrink', arguments)
+  -ms-flex-negative arguments
+  vendorNoMS('flex-shrink', arguments)
+
+flex-basis()
+  -ms-flex-preferred-size arguments
+  vendorNoMS('flex-basis', arguments)
 
 justify-content()
-  vendor('justify-content', arguments)
+  if arguments is space-around
+    -ms-flex-pack distribute
+  else if arguments is space-between
+    -webkit-box-back justify
+    -ms-flex-pack justify
+  else if arguments is flex-start
+    -webkit-box-pack start
+    -ms-flex-pack start
+  else if arguments is flex-end
+    -webkit-box-pack end
+    -ms-flex-pack end
+  else
+    -webkit-box-pack arguments
+    -ms-flex-pack arguments
+  vendorNoMS('justify-content', arguments)
 
 align-content()
-  vendor('align-content', arguments)
+  if arguments is flex-start
+    -ms-flex-line-pack start
+  else if arguments is flex-end
+    -ms-flex-line-pack end
+  else
+    -ms-flex-line-pack arguments
+  vendorNoMS('align-content', arguments)
 
 align-items()
-  vendor('align-items', arguments)
+  if arguments is flex-start
+    -webkit-box-align start
+    -ms-flex-align start
+  else if arguments is flex-end
+    -webkit-box-align end
+    -ms-flex-align end
+  else
+    -webkit-box-align arguments
+    -ms-flex-align arguments
+  vendorNoMS('align-items', arguments)
 
 order()
-  vendor('order', arguments)
+  -webkit-box-ordinal-group (arguments + 1)
+  -ms-flex-order arguments
+  vendorNoMS('order', arguments)
 
 align-self()
-  vendor('align-self', arguments)
+  if arguments is flex-start
+    -ms-flex-item-align start
+  else if arguments is flex-end
+    -ms-flex-item-align end
+  else
+    -ms-flex-item-align arguments
+  vendorNoMS('align-self', arguments)
 
 /* ====================== TRANSITIONS ====================== */
 transition()
-  vendor('transition', arguments)
+  vendorNoMS('transition', arguments)
 
 transition-delay()
-  vendor('transition-delay', arguments)
+  vendorNoMS('transition-delay', arguments)
 
 transition-property()
-  vendor('transition-property', arguments)
+  vendorNoMS('transition-property', arguments)
 
 transition-duration()
-  vendor('transition-duration', arguments)
+  vendorNoMS('transition-duration', arguments)
 
 transition-timing-function()
-  vendor('transition-timing-function', arguments)
+  vendorNoMS('transition-timing-function', arguments)
 
 transform()
-  vendor('transform', arguments)
+  vendorNoMS('transform', arguments)
 
 transform-origin()
-  vendor('transform-origin', arguments)
+  vendorNoMS('transform-origin', arguments)
 
 transform-style()
-  vendor('transform-style', arguments)
+  vendorNoMS('transform-style', arguments)
+
+backface-visibility()
+  vendorNoMS('backface-visibility', arguments)
+
+perspective()
+  vendorNoMS('perspective', arguments)
 
 /* ====================== COLUMNS ====================== */
 columns()
